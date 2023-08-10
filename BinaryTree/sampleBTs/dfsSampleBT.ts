@@ -1,6 +1,13 @@
 import btNode from "../btNode.ts";
 
 // dfs_test_00
+
+//      a
+//    /   \
+//   b     c
+//  / \     \
+// d   e     f
+
 const nodeD = new btNode("d");
 const nodeE = new btNode("e");
 const nodeF = new btNode("f");
@@ -11,6 +18,15 @@ const nodeA = new btNode("a", nodeB, nodeC);
 const dfs_test_00 = nodeA;
 
 // dfs_test_01
+
+//      a
+//    /   \
+//   b     c
+//  / \     \
+// d   e     f
+//    /
+//   g
+
 const a = new btNode("a");
 const b = new btNode("b");
 const c = new btNode("c");
@@ -29,9 +45,23 @@ e.left = g;
 const dfs_test_01 = a;
 
 // dfs_test_02
+
+//      a
+
 const dfs_test_02 = new btNode("a");
 
 //dfs_test_03
+
+//      a
+//       \
+//        b
+//       /
+//      c
+//       \
+//        d
+//         \
+//          e
+
 const n_a = new btNode("a");
 const n_b = new btNode("b");
 const n_c = new btNode("c");
