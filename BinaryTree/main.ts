@@ -4,8 +4,8 @@ import { treeIncludesDFS, treeIncludesBFS } from "./treeIncludes.ts";
 import { treeSumDFS, treeSumBFS } from "./treeSum.ts";
 import { treeMinValueDFS, treeMinValueBFS } from "./treeMinValue.ts";
 import maxRootToLeafSum from "./maxRootToLeafSum.ts";
-import { nodeA } from "./helper/letterBasedBT.ts";
-import node1 from "./helper/numberBasedBT.ts";
+import { nodeA } from "./sampleBTs/dfsSampleBT.ts";
+import node1 from "./sampleBTs/numberBasedBT.ts";
 
 const result1 = dfsRecursion(nodeA, []);
 const result2 = dfsStackRecursion(nodeA, []);

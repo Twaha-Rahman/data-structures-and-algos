@@ -5,7 +5,7 @@ import {
   bfs_test_01,
   bfs_test_02,
   bfs_test_03,
-} from "../helper/bfsSampleBT.ts";
+} from "../sampleBTs/bfsSampleBT.ts";
 import { bfsQueueLoop } from "../bfs.ts";
 
 Deno.test("Null as root node", () => {

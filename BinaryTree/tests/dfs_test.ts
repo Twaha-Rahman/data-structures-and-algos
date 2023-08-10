@@ -5,7 +5,7 @@ import {
   dfs_test_01,
   dfs_test_02,
   dfs_test_03,
-} from "../helper/letterBasedBT.ts";
+} from "../sampleBTs/dfsSampleBT.ts";
 import { dfsStackLoop, dfsRecursion } from "../dfs.ts";
 
 Deno.test("Null as root node", () => {
