@@ -1,6 +1,8 @@
 import btNode from "./btNode.ts";
 
-function bfsQueueLoop(rootNode: btNode): any[] {
+function bfsQueueLoop(rootNode: btNode | null): string[] | number[] {
+  if (rootNode === null) return [];
+
   const result: any[] = [];
   const queue: btNode[] = [];
 

@@ -2,7 +2,8 @@ import btNode from "./btNode.ts";
 
 function dfsRecursion(
   passedNode: btNode,
-  passedStack: string[] | number[]
+  // passedStack: string[] | number[]
+  passedStack: any[]
 ): string[] | number[] {
   if (passedNode === null) return passedStack;
 
@@ -25,7 +26,8 @@ function dfsRecursion(
 
 function stack(
   passedStack: btNode[],
-  passedResult: string[] | number[]
+  // passedResult: string[] | number[]
+  passedResult: any[]
 ): string[] | number[] {
   const currentNode = passedStack.pop();
 
@@ -56,7 +58,8 @@ function dfsStackRecursion(
   passedNode: btNode,
   passedStack: btNode[]
 ): string[] | number[] {
-  const result: string[] | number[] = [];
+  // const result: string[] | number[] = [];
+  const result: any[] = [];
 
   if (passedNode === null) return result;
 
@@ -86,11 +89,12 @@ function dfsStackRecursion(
   }
 }
 
-function dfsStackLoop(rootNode: btNode): string[] | number[] {
+function dfsStackLoop(rootNode: btNode | null): string[] | number[] {
   if (rootNode === null) return [];
 
   const stack: btNode[] = [];
-  const result: string[] | number[] = [];
+  // const result: string[] | number[] = [];
+  const result: any[] = [];
   stack.push(rootNode);
 
   while (stack.length > 0) {
