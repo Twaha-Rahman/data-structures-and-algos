@@ -1,7 +1,7 @@
 import { assertEquals } from "https://deno.land/std@0.198.0/assert/mod.ts";
 
 import {
-  nodeA,
+  dfs_test_00,
   dfs_test_01,
   dfs_test_02,
   dfs_test_03,
@@ -13,14 +13,14 @@ Deno.test("Null as root node", () => {
   assertEquals(result, []);
 });
 
-Deno.test("Binary tree with a height of 3 level", () => {
+Deno.test("Test with BT Sample 00", () => {
   //      a
   //    /   \
   //   b     c
   //  / \     \
   // d   e     f
 
-  const result = dfsStackLoop(nodeA);
+  const result = dfsStackLoop(dfs_test_00);
   assertEquals(result, ["a", "b", "d", "e", "c", "f"]);
 });
 

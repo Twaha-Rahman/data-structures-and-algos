@@ -1,12 +1,14 @@
 import btNode from "../btNode.ts";
 
-// dfs-test-00
+// dfs_test_00
 const nodeD = new btNode("d");
 const nodeE = new btNode("e");
 const nodeF = new btNode("f");
 const nodeB = new btNode("b", nodeD, nodeE);
 const nodeC = new btNode("c", undefined, nodeF);
 const nodeA = new btNode("a", nodeB, nodeC);
+
+const dfs_test_00 = nodeA;
 
 // dfs_test_01
 const a = new btNode("a");
@@ -43,4 +45,4 @@ n_d.right = n_e;
 
 const dfs_test_03 = n_a;
 
-export { nodeA, dfs_test_01, dfs_test_02, dfs_test_03 };
+export { nodeA, dfs_test_00, dfs_test_01, dfs_test_02, dfs_test_03 };
