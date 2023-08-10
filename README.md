@@ -19,3 +19,11 @@ To watch for changes and reload when you change any of the files, you'll have to
 ```bash
 deno run --watch BinaryTree/main.ts
 ```
+
+#Run the tests
+
+To run the tests, simply run the following command:
+
+```bash
+deno test
+```
