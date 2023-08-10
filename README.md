@@ -14,4 +14,8 @@ Inside all the folders the `main.ts` file is the main file that is intended to b
 deno run  BinaryTree/main.ts
 ```
 
-To watch for changes and reload when you change any of the files, you might want to run de
+To watch for changes and reload when you change any of the files, you'll have to run `deno run` with the `--watch` flag. For example:
+
+```bash
+deno run --watch BinarySearch/main.ts
+```
