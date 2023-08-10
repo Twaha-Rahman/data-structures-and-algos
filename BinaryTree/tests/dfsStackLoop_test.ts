@@ -6,7 +6,7 @@ import {
   dfs_test_02,
   dfs_test_03,
 } from "../sampleBTs/dfsSampleBT.ts";
-import { dfsStackLoop, dfsRecursion } from "../dfs.ts";
+import { dfsStackLoop } from "../dfs.ts";
 
 Deno.test("Null as root node", () => {
   const result = dfsStackLoop(null);

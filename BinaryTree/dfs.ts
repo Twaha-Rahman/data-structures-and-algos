@@ -1,7 +1,7 @@
 import btNode from "./btNode.ts";
 
 function dfsRecursion(
-  passedNode: btNode,
+  passedNode: btNode | null,
   // passedStack: string[] | number[]
   passedStack: any[]
 ): string[] | number[] {
