@@ -8,7 +8,7 @@ const nodeB = new btNode("b", nodeD, nodeE);
 const nodeC = new btNode("c", undefined, nodeF);
 const nodeA = new btNode("a", nodeB, nodeC);
 
-// dfs-test-01
+// dfs_test_01
 const a = new btNode("a");
 const b = new btNode("b");
 const c = new btNode("c");
@@ -24,10 +24,12 @@ b.right = e;
 c.right = f;
 e.left = g;
 
-// dfs-test-02
-const node_a = new btNode("a");
+const dfs_test_01 = a;
 
-//dfs-test-03
+// dfs_test_02
+const dfs_test_02 = new btNode("a");
+
+//dfs_test_03
 const n_a = new btNode("a");
 const n_b = new btNode("b");
 const n_c = new btNode("c");
@@ -39,4 +41,6 @@ n_b.left = n_c;
 n_c.right = n_d;
 n_d.right = n_e;
 
-export { nodeA };
+const dfs_test_03 = n_a;
+
+export { nodeA, dfs_test_01, dfs_test_02, dfs_test_03 };
