@@ -1,77 +1,46 @@
-function myMerge(arr1: number[], arr2: number[]): number[] {
-  const mergedArray: number[] = [];
-
-  while (arr1.length + arr2.length > 0) {
-    if (arr1.length === 0) {
-      mergedArray.push(arr2.shift());
-      continue;
-    }
-    if (arr2.length === 0) {
-      mergedArray.push(arr1.shift());
-      continue;
-    }
-
-    if (arr1[0] <= arr2[0]) {
-      mergedArray.push(arr1.shift());
-    } else {
-      mergedArray.push(arr2.shift());
-    }
-  }
-
-  return mergedArray;
-}
-
 function merge(arr: number[], L: number, M: number, R: number) {
-  const left = arr.slice(L, M + 1);
-  const right = arr.slice(M + 1, R + 1);
-
-  console.log(left, right);
-
+  const [left, right] = [arr.slice(L, M + 1), arr.slice(M + 1, R + 1)];
   let [i, j, k] = [L, 0, 0];
 
   while (j < left.length && k < right.length) {
     if (left[j] <= right[k]) {
       arr[i] = left[j];
-      j += 1;
+      j++;
     } else {
       arr[i] = right[k];
-      k += 1;
+      k++;
     }
+    ++i;
   }
 
   while (j < left.length) {
     arr[i] = left[j];
-    j += 1;
-    i += 1;
+    j++;
+    i++;
   }
 
   while (k < right.length) {
     arr[i] = right[k];
-    k += 1;
-    i += 1;
+    k++;
+    i++;
   }
 }
 
-function mergeSort(
-  unsortedArr: number[],
-  left: number,
-  right: number
-): number[] {
-  if (unsortedArr.length === 0) return [];
+function mergeSort(arr: number[], l: number, r: number): number[] {
+  if (l === r) return arr;
 
-  if (left === right) return unsortedArr;
+  const m = Math.floor((l + r) / 2);
 
-  const middle = Math.floor((left + right) / 2);
+  mergeSort(arr, l, m);
+  mergeSort(arr, m + 1, r);
+  merge(arr, l, m, r);
 
-  mergeSort(unsortedArr, left, middle);
-  mergeSort(unsortedArr, middle + 1, right);
-  merge(unsortedArr, left, middle, right);
-
-  return unsortedArr;
+  return arr;
 }
 
 const unsortedArray = [12, 11, 13, 5, 6, 7];
 const sortedArray = mergeSort(unsortedArray, 0, unsortedArray.length - 1);
 
-console.log(sortedArray);
+// We modify the passed in array
+console.log(sortedArray, unsortedArray);
 // Expected: [5, 6, 7, 11, 12, 13]
