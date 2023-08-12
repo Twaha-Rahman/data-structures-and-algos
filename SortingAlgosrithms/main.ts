@@ -24,6 +24,7 @@ function merge(arr: number[], L: number, M: number, R: number) {
     k++;
     i++;
   }
+  console.log(arr);
 }
 
 function mergeSort(arr: number[], l: number, r: number): number[] {
@@ -38,7 +39,7 @@ function mergeSort(arr: number[], l: number, r: number): number[] {
   return arr;
 }
 
-const unsortedArray = [12, 11, 13, 5, 6, 7];
+const unsortedArray = [14, 12, 2, 1, 19, 18, 4, 3, 11, 13, 5, 6, 7];
 const sortedArray = mergeSort(unsortedArray, 0, unsortedArray.length - 1);
 
 // We modify the passed in array
