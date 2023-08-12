@@ -1,50 +1,29 @@
-function myPartition(array: number[], low: number, high: number): number {
-  const pivot = array[high];
+function partition(array: number[], start: number, end: number): number {
+  const pivot = array[end];
 
-  // we don't check the last index as we are using it as pivot
-  let [i, j] = [low, high - 1];
+  let [i, j] = [start - 1, start];
 
-  while (i < j) {
-    while (i < j) {
-      if (array[i] > pivot) {
-        break;
-      }
-      ++i;
+  while (j <= end - 1) {
+    if (array[j] <= pivot) {
+      i++;
+      [array[j], array[i]] = [array[i], array[j]];
     }
 
-    while (j > i) {
-      if (array[j] <= pivot) {
-        break;
-      }
-      --j;
-    }
-
-    [array[i], array[j]] = [array[j], array[i]];
+    j++;
   }
 
-  [array[i], array[high]] = [array[high], array[i]];
+  i++;
+  [array[i], array[end]] = [array[end], array[i]];
 
   return i;
 }
 
-function quickSort(array: number[], low: number, high: number) {
-  const numbersWithinBound = high - low;
+function quickSort(array: number[], start: number, end: number) {
+  if (end <= start) return;
 
-  if (numbersWithinBound < 2) return;
-
-  const pivotIndex = myPartition(array, low, high);
-
-  if (pivotIndex === 0) {
-    return;
-  }
-
-  if (!(pivotIndex - low <= 1)) {
-    quickSort(array, low, pivotIndex - 1);
-  }
-
-  if (!(high - pivotIndex <= 1)) {
-    quickSort(array, pivotIndex + 1, high);
-  }
+  const pivotIndex = partition(array, start, end);
+  quickSort(array, start, pivotIndex - 1);
+  quickSort(array, pivotIndex + 1, end);
 }
 
 const inputArr = [8, 7, 6, 1, 0, 9, 2];
