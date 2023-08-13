@@ -28,6 +28,7 @@ function merge(arr: number[], L: number, M: number, R: number) {
 }
 
 function mergeSort(arr: number[], l: number, r: number): number[] {
+  if (arr.length < 2) return [];
   if (l === r) return arr;
 
   const m = Math.floor((l + r) / 2);
@@ -39,9 +40,4 @@ function mergeSort(arr: number[], l: number, r: number): number[] {
   return arr;
 }
 
-const unsortedArray = [14, 12, 2, 1, 19, 18, 4, 3, 11, 13, 5, 6, 7];
-const sortedArray = mergeSort(unsortedArray, 0, unsortedArray.length - 1);
-
-// We modify the passed in array
-console.log(sortedArray, unsortedArray);
-// Expected: [5, 6, 7, 11, 12, 13]
+export default mergeSort;
